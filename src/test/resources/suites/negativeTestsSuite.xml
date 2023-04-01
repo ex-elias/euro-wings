@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Negative tests suite">
+
+    <listeners>
+        <listener class-name="com.eurowings.listeners.ScreenshotListener"/>
+    </listeners>
+
+    <test name="Flight status tests">
+        <classes>
+            <class name="com.eurowings.tests.FlightStatusNegativeTest"/>
+        </classes>
+    </test>
+
+</suite>
