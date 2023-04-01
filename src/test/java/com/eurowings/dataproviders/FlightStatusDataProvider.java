@@ -1,4 +1,4 @@
-package com.eurowings.tests;
+package com.eurowings.dataproviders;
 
 import java.util.List;
 import org.testng.annotations.DataProvider;
