@@ -24,4 +24,9 @@ public final class PropertyReader {
         }
         return null;
     }
+
+    public static int getInt(String property) {
+        String stringProperty = get(property);
+        return stringProperty != null ? Integer.parseInt(stringProperty) : 0;
+    }
 }

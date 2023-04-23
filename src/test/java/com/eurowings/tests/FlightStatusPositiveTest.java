@@ -1,6 +1,7 @@
 package com.eurowings.tests;
 
 import com.eurowings.dataproviders.FlightStatusDataProvider;
+import com.eurowings.utils.RetryAnalyzer;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import java.util.List;
@@ -11,7 +12,8 @@ public class FlightStatusPositiveTest extends BaseTest {
     @Feature("Test functionality of Eurowings site")
     @Story("Test functionality of Flight Status page")
     @Test(dataProvider = "flightRoutesPositiveDataProvider", dataProviderClass = FlightStatusDataProvider.class,
-            description = "Verify that flight routes with different travel dates are shown with the selected dates")
+            description = "Verify that flight routes with different travel dates are shown with the selected dates",
+            retryAnalyzer = RetryAnalyzer.class)
     public void findFlightRoutesPositiveTest(String departureAirport, String destinationAirport, String date,
                                              List<List<String>> flightRoutes) {
         actionStep.selectFlightRoute(departureAirport, destinationAirport, date);

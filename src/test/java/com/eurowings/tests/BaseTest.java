@@ -23,7 +23,7 @@ public abstract class BaseTest {
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(PropertyReader.getInt("wait.timeout.seconds")));
         context.setAttribute("driver", webDriver);
         actionStep = new ActionStep(webDriver);
         assertStep = new AssertStep(webDriver);
